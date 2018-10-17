@@ -188,12 +188,10 @@ class QMain(QWidget):
         if not subject:
             return
 
-        if subject not in self.known_subjects.keys():
-            self.known_subjects[subject] = DEFAULT.copy()
-
-        self.current_subject = self.known_subjects[subject]
-        self.current_subject.update({'name': subject})
-        self.update_fields()
+        if subject in self.known_subjects.keys():
+            self.current_subject = self.known_subjects[subject]
+            self.current_subject.update({'name': subject})
+            self.update_fields()
 
     def update_fields(self):
         reverse_g = dict(map(reversed, GENDER.items()))
@@ -208,6 +206,13 @@ class QMain(QWidget):
                              self.subject_completer))
 
     def save_subject(self):
+        subject = self.subject_name.text()
+        if subject not in self.known_subjects.keys():
+            self.known_subjects[subject] = DEFAULT.copy()
+            self.current_subject = self.known_subjects[subject]
+            self.current_subject.update({'name': subject})
+
+
         self.current_subject['gender'] = \
             GENDER[self.genderComboBox.currentText()]
         self.current_subject['ethnicity'] = \
