@@ -1,13 +1,25 @@
 # image_acquisition
 
 A simple gui to acquire images from the web.
-It saves the images as expected for the 1. assignment on the course Image Based Biometry 2018/19
+It saves the images as expected for the 1. assignment on the course Image Based
+Biometry 2018/19
 
-Use Python 3.6 and above.
 ### Installation & run
+Use Python 3.6 and above.
+
+**Change the `BITBUCKET_NAME` variable in the `image_acquisition.py`!**
 ```bash
 pip install -r requirements.txt
 python image_acquisition.py
 ```
 
-**Don't forget to change the `BITBUCKET_NAME` variable.**
+### Usage
+Copy image url into source. Fill out the data about the subject.
+If you want to crop the image just select a region. On save the subject data and
+selected part of the image (if no part is selected the whole image is used) are
+saved according to the assignment specification.
+
+
+### Issues
+If you have any problems pleas submit a pull request with the fix. I will not
+provide any additional support.
