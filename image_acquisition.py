@@ -201,6 +201,7 @@ class QMain(QWidget):
         self.ethnicityComboBox.setCurrentText(
             reverse_e[self.current_subject['ethnicity']])
 
+    def update_completer(self):
         self.subject_completer.setModel(
             QStringListModel(self.known_subjects.keys(),
                              self.subject_completer))
@@ -211,7 +212,7 @@ class QMain(QWidget):
             self.known_subjects[subject] = DEFAULT.copy()
             self.current_subject = self.known_subjects[subject]
             self.current_subject.update({'name': subject})
-
+            self.update_completer()
 
         self.current_subject['gender'] = \
             GENDER[self.genderComboBox.currentText()]
