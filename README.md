@@ -21,5 +21,6 @@ saved according to the assignment specification.
 
 
 ### Issues
+Was tested on Ubuntu 18. Probably won't work in windows due to backslash spiting.
 If you have any problems pleas submit a pull request with the fix. I will not
 provide any additional support.
