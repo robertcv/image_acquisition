@@ -181,7 +181,6 @@ class QMain(QWidget):
     def clear(self):
         self.imageEdit.clear()
         self.source_url.clear()
-        self.subject_name.clear()
 
     def load_subject(self):
         subject = self.subject_name.text()
