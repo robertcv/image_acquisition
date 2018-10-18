@@ -256,7 +256,8 @@ class QMain(QWidget):
             if os.path.isfile(self.info_file):
                 with open(self.info_file) as info_f:
                     idata = info_f.readlines()
-                for f, n, _ in map(lambda x: x.split(';'), idata):
+                for x in map(lambda x: x.split(';'), idata):
+                    f, n = x[0], x[1]
                     name = n[1:-1]
                     if n not in self.known_subjects:
                         self.known_subjects[name] = DEFAULT.copy()
